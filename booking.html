@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Now | PaddleUp</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo type.svg" alt="PaddleUp">
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">
+              <i class="fas fa-home me-1"></i> Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="booking.html">
+              <i class="fas fa-calendar-check me-1"></i> Book Now
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">
+              <i class="fas fa-info-circle me-1"></i> About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">
+              <i class="fas fa-envelope me-1"></i> Contact
+            </a>
+          </li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-primary" href="tel:+21612345678">
+              <i class="fas fa-phone me-1"></i> Call Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Booking Section -->
+  <section class="booking-section py-4">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <!-- Progress Steps -->
+          <div class="progress-steps mb-4">
+            <div class="step-indicator active" data-step="1">
+              <span class="step-number">1</span>
+              <span class="step-label">Equipment</span>
+            </div>
+            <div class="step-indicator" data-step="2">
+              <span class="step-number">2</span>
+              <span class="step-label">Duration</span>
+            </div>
+            <div class="step-indicator" data-step="3">
+              <span class="step-number">3</span>
+              <span class="step-label">Contact</span>
+            </div>
+          </div>
+
+          <!-- Step 1: Equipment Selection -->
+          <div class="booking-step active" data-step="1">
+            <h2 class="text-center mb-4">What would you like to rent?</h2>
+            <div class="equipment-options">
+              <div class="equipment-group" data-equipment="kayak">
+                <div class="equipment-header">
+                  <i class="fas fa-ship"></i>
+                  <span class="option-title">Kayak</span>
+                  <span class="option-price">25DT/h</span>
+                </div>
+                <div class="quantity-selector">
+                  <label>Number of Kayaks:</label>
+                  <div class="quantity-controls">
+                    <button class="btn-quantity" data-action="decrease">-</button>
+                    <input type="number" class="quantity-input" id="kayakQuantity" value="0" min="0" max="10">
+                    <button class="btn-quantity" data-action="increase">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="equipment-group" data-equipment="paddle">
+                <div class="equipment-header">
+                  <i class="fas fa-water"></i>
+                  <span class="option-title">Stand up paddle</span>
+                  <span class="option-price">30DT/h</span>
+                </div>
+                <div class="quantity-selector">
+                  <label>Number of Paddle Boards:</label>
+                  <div class="quantity-controls">
+                    <button class="btn-quantity" data-action="decrease">-</button>
+                    <input type="number" class="quantity-input" id="paddleQuantity" value="0" min="0" max="10">
+                    <button class="btn-quantity" data-action="increase">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center mt-4">
+              <button class="btn btn-primary" id="continueToDuration">
+                Continue to Duration <i class="fas fa-arrow-right ms-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Duration Selection -->
+          <div class="booking-step" data-step="2">
+            <h2 class="text-center mb-4">For how long?</h2>
+            <div class="duration-options">
+              <button class="btn-duration" data-duration="1">
+                <span class="duration-title">1 Hour</span>
+                <span class="duration-price">25DT</span>
+              </button>
+              <button class="btn-duration" data-duration="2">
+                <span class="duration-title">2 Hours</span>
+                <span class="duration-price">45DT <small>(Save 10%)</small></span>
+              </button>
+              <button class="btn-duration" data-duration="4">
+                <span class="duration-title">4 Hours</span>
+                <span class="duration-price">80DT <small>(Save 20%)</small></span>
+              </button>
+              <button class="btn-duration" data-duration="full">
+                <span class="duration-title">Full Day</span>
+                <span class="duration-price">150DT <small>(Save 25%)</small></span>
+              </button>
+            </div>
+            
+            <div class="time-selection mt-4">
+              <div class="time-selection-header">
+                <i class="fas fa-clock text-primary"></i>
+                <h5>Select Your Preferred Time</h5>
+                <span class="badge bg-primary-soft">Optional</span>
+              </div>
+              <div class="time-selection-content">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-floating time-input">
+                      <input type="date" class="form-control" id="bookingDate" placeholder="Select Date">
+                      <label for="bookingDate">
+                        <i class="fas fa-calendar-alt me-2"></i>
+                        Booking Date
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating time-input">
+                      <input type="time" class="form-control" id="bookingTime" placeholder="Select Time">
+                      <label for="bookingTime">
+                        <i class="fas fa-clock me-2"></i>
+                        Preferred Time
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="time-selection-info">
+                  <div class="info-icon">
+                    <i class="fas fa-info-circle"></i>
+                  </div>
+                  <div class="info-content">
+                    <h6>Flexible Booking</h6>
+                    <p>If no time is selected, we'll contact you to arrange a suitable time that works for you.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="text-center mt-4">
+              <button class="btn btn-primary" id="continueToContact">
+                Continue to Contact <i class="fas fa-arrow-right ms-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Contact Information -->
+          <div class="booking-step" data-step="3">
+            <h2 class="text-center mb-4">Your Information</h2>
+            <form class="contact-form">
+              <div class="mb-3">
+                <input type="text" class="form-control form-control-lg" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="mb-4">
+                <input type="tel" class="form-control form-control-lg" id="whatsapp" placeholder="WhatsApp Number" required>
+              </div>
+              <div class="price-summary mb-4 p-3 bg-light rounded">
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Equipment</span>
+                  <span class="text-primary" id="equipmentSummary">0 Kayaks, 0 Stand up paddles</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Duration</span>
+                  <span id="durationText">0 hours</span>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between">
+                  <strong>Total</strong>
+                  <strong class="text-primary" id="totalPrice">0DT</strong>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg w-100">
+                <i ></i>Confirm Booking
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script>
+    const WHATSAPP_PHONE_NUMBER = 'your_whatsapp_number'; // Replace with your WhatsApp number
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html> 
